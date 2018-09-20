@@ -29,6 +29,7 @@ mean(dataframe$p1_fac)
 The mean of `sample` and `morethan2` works, `p1_cha` and `p1_fac` do not work and the outputs are `NA`. Obviously you cannot calculate the mean of characters and factors. I think elements in `morethan2` are treated as zeros and ones so R can calculate its mean. 
 
 
+
 The following code chunk tries to convert logical/character/factor vectors to numerical vectors.
 ```{r convert_to_num, eval = FALSE}
 as.numeric(dataframe$morethan2)
@@ -36,6 +37,7 @@ as.numeric(dataframe$p1_cha)
 as.numeric(dataframe$p1_fac)
 ```
 The logical vector can be converted to numbers, true = 1, false = 0. The character vector cannot be converted. The factor vector was converted to numbers according to the elements' alphabetic order. When elements in factor vector are numbers, they are converted to the numbers.
+
 
 
 The following code chunk tries to convert vectors to other data types. 
@@ -61,11 +63,10 @@ norm_distri = tibble(
   p2_num = as.numeric(x_plus_y_more_than0),
   p2_fac = as.factor(x_plus_y_more_than0)
 )
-norm_distri
-object.size(norm_distri)
 ```
 
 The size of the dataset is `r object.size(norm_distri)`. The mean of x is `r mean(norm_distri$x) `. The median of x is `r median(norm_distri$x)`. The proportion of cases for which the logical vector is `TRUE` is `r sum(norm_distri$p2_num)/1000`.
+
 
 The following code chunk creates the scatter plot of `x_plus_y_more_than0` in `norm_distri` and saves the plot in a pdf file.
 ```{r scatter_plot_logical}
