@@ -35,3 +35,17 @@ as.numeric(dataframe$morethan2)
 as.numeric(dataframe$p1_cha)
 as.numeric(dataframe$p1_fac)
 ```
+The logical vector can be converted to numbers, true = 1, false = 0. The character vector cannot be converted. The factor vector was converted to numbers according to the elements' alphabetic order. When elements in factor vector are numbers, they are converted to the numbers.
+
+
+The following code chunk tries to convert vectors to other data types. 
+```{r convert_other_type}
+tmp1 = as.factor(dataframe$p1_cha)
+tmp1
+as.numeric(tmp1)
+
+tmp2 = as.character(dataframe$p1_fac)
+tmp2
+as.numeric(tmp2)
+```
+Characters can be converted into factors, and they are ordered alphabetically in levels. The characters are first sorted in alphabetic order and then converted to numbers. The factor can be converted to characters but cannot be converted to numeric type (the factors become NA in the numeric vector). But when the elements in factors are numbers in the first place, they can be converted to numbers. 
