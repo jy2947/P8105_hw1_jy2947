@@ -3,3 +3,26 @@ title: "p8105_hw1_jy2947"
 author: "Jiawei Ye"
 output: github_document
 ---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+```
+
+
+This is the first homework of P8105.
+
+## Problem 1
+
+The following code chunk creates the data frame as required. It also calculates the mean of each variable in the dataframe.  
+```{r create_uniform_distribution}
+dataframe = tibble(
+  sample = runif(10, min = 0, max = 5),
+  morethan2 = c(sample[1:10] > 2),
+  p1_cha = c('JohnyDepp','AlanRickman','Eddie','Benedict','Watson','f','g','h','i','SeverusSnape'),
+  p1_fac = factor(c('A','A','C','C','A','B','B','E','E','A'))
+)
+mean(dataframe$sample)
+mean(dataframe$morethan2)
+mean(dataframe$p1_cha)
+mean(dataframe$p1_fac)
+```
