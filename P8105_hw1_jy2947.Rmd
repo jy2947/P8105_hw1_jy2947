@@ -49,3 +49,18 @@ tmp2
 as.numeric(tmp2)
 ```
 Characters can be converted into factors, and they are ordered alphabetically in levels. The characters are first sorted in alphabetic order and then converted to numbers. The factor can be converted to characters but cannot be converted to numeric type (the factors become NA in the numeric vector). But when the elements in factors are numbers in the first place, they can be converted to numbers. 
+
+## Problem 2
+
+The following code chunk creates the data frame as required.
+```{r create_normal_distribution}
+norm_distri = tibble(
+  x = rnorm(1000),
+  y = rnorm(1000),
+  x_plus_y_more_than0 = c(x[1:1000] + y[1:1000] > 0 ),
+  p2_num = as.numeric(x_plus_y_more_than0),
+  p2_fac = as.factor(x_plus_y_more_than0)
+)
+norm_distri
+object.size(norm_distri)
+```
