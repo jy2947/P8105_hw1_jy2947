@@ -65,8 +65,7 @@ The data frame has `r nrow(norm_distri)` rows and `r ncol(norm_distri)` columns.
 The following code chunk creates the scatter plot of `x_plus_y_more_than0` in `norm_distri` and saves the plot in a pdf file.
 ```{r scatter_plot_logical}
 ggplot(norm_distri, aes(x = x, y = y, color = x_plus_y_more_than0)) + geom_point()
-dir.create('./plot')
-ggsave("hw1_p2_scatter_plot.pdf", path = './plot')
+ggsave("hw1_p2_scatter_plot.pdf")
 ```
 
 The following code chunk creates the scatter plot of `p2_num` in `norm_distri`
