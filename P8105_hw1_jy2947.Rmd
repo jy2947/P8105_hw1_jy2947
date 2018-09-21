@@ -60,7 +60,7 @@ norm_distri = tibble(
   p2_fac = as.factor(x_plus_y_more_than0)
 )
 ```
-The size of the dataset is `r object.size(norm_distri)`. The mean of x is `r mean(norm_distri$x) `. The median of x is `r median(norm_distri$x)`. The proportion of cases for which the logical vector is `TRUE` is `r sum(norm_distri$p2_num)/1000`.  
+The data frame has `r nrow(norm_distri)` rows and `r ncol(norm_distri)` columns. The mean of x is `r mean(norm_distri$x) `. The median of x is `r median(norm_distri$x)`. The proportion of cases for which the logical vector is `TRUE` is `r sum(norm_distri$p2_num)/1000`.  
 
 The following code chunk creates the scatter plot of `x_plus_y_more_than0` in `norm_distri` and saves the plot in a pdf file.
 ```{r scatter_plot_logical}
